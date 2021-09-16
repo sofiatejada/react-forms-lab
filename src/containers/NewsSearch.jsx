@@ -6,18 +6,20 @@ import Search from '../components/news/Search';
 export default class NewsSearch extends Component {
 
   state = {
-    loading: true,
     articles: [],
     search: '',
   }
 
   async componentDidMount() {
-    getNewsArticles().then((articles) => this.setState({
-      articles, loading: false,
-    }))
+    if(this.state.search.length) {
+      getNewsArticles(this.state.search).then((articles) => this.setState({
+        articles
+      })
+      )
+    }
   }
 
-  handleSubmit = (event) => {
+  handleSearch = (event) => {
     this.setState({ search: event.target.value })
   }
 
@@ -26,7 +28,7 @@ export default class NewsSearch extends Component {
 
     return (
       <div>
-        <Search search={search} />
+        <Search search={search} onSearchChange={this.handleSearch} />
         <ArticleList articles={articles} />
       </div>
     )

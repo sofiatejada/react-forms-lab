@@ -5,9 +5,22 @@ import { Link } from 'react-router-dom';
 
 const ArticleList = ({ articles }) => (
   <ul aria-label="articles">
-    {articles.map}
-    <li>
-
-    </li>
+    {articles.map((article) => (
+      <li>
+        <Link>
+          <Article title={article.title} author={article.author} description={article.description} />
+        </Link>
+      </li>
+    ))}
   </ul>
 );
+
+ArticleList.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  )
+}
