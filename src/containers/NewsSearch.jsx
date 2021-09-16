@@ -25,7 +25,8 @@ export default class NewsSearch extends Component {
 
   handeSubmit = (event) => {
     event.preventDefault()
-    getNewsArticles(this.state.search)
+    getNewsArticles(this.state.search).then((articles) => this.setState({ articles })
+    )
   }  
 
   render() {
