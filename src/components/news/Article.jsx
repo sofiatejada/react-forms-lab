@@ -14,3 +14,5 @@ Article.propTypes = {
   author: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 }
+
+export default Article;

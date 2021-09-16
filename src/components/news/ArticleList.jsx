@@ -1,15 +1,12 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import Article from './Article';
-import { Link } from 'react-router-dom';
 
 const ArticleList = ({ articles }) => (
   <ul aria-label="articles">
-    {articles.map((article) => (
-      <li>
-        <Link>
-          <Article title={article.title} author={article.author} description={article.description} />
-        </Link>
+    {articles.map((article, index) => (
+      <li key={`${article}-${index}`}>
+        <Article title={article.title} author={article.author} description={article.description} />
       </li>
     ))}
   </ul>
@@ -24,3 +21,5 @@ ArticleList.propTypes = {
     })
   )
 }
+
+export default ArticleList;

@@ -7,7 +7,7 @@ export default class NewsSearch extends Component {
 
   state = {
     articles: [],
-    search: '',
+    search: 'pokemon',
   }
 
   async componentDidMount() {
@@ -23,12 +23,17 @@ export default class NewsSearch extends Component {
     this.setState({ search: event.target.value })
   }
 
+  handeSubmit = (event) => {
+    event.preventDefault()
+    getNewsArticles(this.state.search)
+  }  
+
   render() {
     const { articles, search } = this.state;
 
     return (
       <div>
-        <Search search={search} onSearchChange={this.handleSearch} />
+        <Search search={search} onSearchChange={this.handleSearch} onSearchSubmit={this.handeSubmit} />
         <ArticleList articles={articles} />
       </div>
     )
