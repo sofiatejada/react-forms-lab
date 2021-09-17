@@ -5,7 +5,9 @@ exports[`App component renders App 1`] = `
   <div>
     <div>
       <div>
-        <form>
+        <form
+          data-testid="search-form"
+        >
           <input
             aria-label="search"
             type="text"
@@ -24,6 +26,12 @@ exports[`App component renders App 1`] = `
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`Article component displays an article 1`] = `
+<p>
+  It's actually a flock of geese...
+</p>
 `;
 
 exports[`ArticleList component displays a list of articles 1`] = `
@@ -74,10 +82,4 @@ exports[`Search displays form with one input and a button 1`] = `
     Search
   </button>
 </form>
-`;
-
-exports[`article component displays an article 1`] = `
-<p>
-  It's actually a flock of geese...
-</p>
 `;
