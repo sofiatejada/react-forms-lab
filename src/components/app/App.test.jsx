@@ -56,8 +56,8 @@ describe('Search', () => {
     render(
       <Search 
         search="Memes"
-        onSearchChange="{() => {}}"
-        onSearchSubmit="{() => {}}"
+        onSearchChange={() => {}}
+        onSearchSubmit={() => {}}
       />
     );
 
