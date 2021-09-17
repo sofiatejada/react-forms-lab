@@ -25,3 +25,59 @@ exports[`App component renders App 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`ArticleList component displays a list of articles 1`] = `
+<ul
+  aria-label="articles"
+>
+  <li>
+    <div>
+      <h3>
+        I can't swim
+      </h3>
+      <p>
+        Raven
+      </p>
+      <p>
+        It's her birthday but she can't swim
+      </p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <h3>
+        What did you do?
+      </h3>
+      <p>
+        Grandma
+      </p>
+      <p>
+        I do nothing wrong in the playroom :[
+      </p>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Search displays form with one input and a button 1`] = `
+<form
+  data-testid="search-form"
+>
+  <input
+    aria-label="search"
+    type="text"
+    value="Memes"
+  />
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+`;
+
+exports[`article component displays an article 1`] = `
+<p>
+  It's actually a flock of geese...
+</p>
+`;
