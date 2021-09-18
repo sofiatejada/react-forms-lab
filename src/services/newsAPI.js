@@ -1,4 +1,4 @@
-const URL = 'https://newsapi.org/v2/everything?'
+const URL = 'https://newsapi.org/v2/everything?';
 
 export const getNewsArticles = (query) => {
   return fetch(`${URL}q=${query}&apiKey=${process.env.API_KEY}`)
@@ -9,7 +9,7 @@ export const getNewsArticles = (query) => {
       description: article.description,
     })
     )
-    )
-}
+    );
+};
 
 

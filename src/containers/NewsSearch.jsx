@@ -15,18 +15,20 @@ export default class NewsSearch extends Component {
       getNewsArticles(this.state.search).then((articles) => this.setState({
         articles
       })
-      )
+      );
     }
   }
 
   handleSearch = (event) => {
-    this.setState({ search: event.target.value })
+    this.setState({ search: event.target.value });
   }
 
   handeSubmit = (event) => {
-    event.preventDefault()
-    getNewsArticles(this.state.search).then((articles) => this.setState({ articles })
-    )
+    event.preventDefault();
+    getNewsArticles(this.state.search)
+      .then((articles) => 
+        this.setState({ articles })
+      );
   }  
 
   render() {
@@ -34,9 +36,12 @@ export default class NewsSearch extends Component {
 
     return (
       <div>
-        <Search search={search} onSearchChange={this.handleSearch} onSearchSubmit={this.handeSubmit} />
+        <Search 
+          search={search} 
+          onSearchChange={this.handleSearch} 
+          onSearchSubmit={this.handeSubmit} />
         <ArticleList articles={articles} />
       </div>
-    )
+    );
   }
 }
